@@ -5,6 +5,9 @@ const exphbs = require('express-handlebars');
 const mongoose = require('mongoose');
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
+const methodOverride = require('method-override');
+const flash = require('connect-flash');
+const session = require('express-sessions');
 
 const app = express();
 
@@ -21,6 +24,28 @@ app.set('view engine', 'handlebars');
 // BodyParser Middleware
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+
+// MethodOverride Middleware
+app.use(methodOverride('_method'));
+
+// Sessions Middleware
+app.use(
+  session({
+    secret: 'secret',
+    resave: true,
+    saveUninitialized: true
+  })
+);
+
+app.use(flash());
+
+// Global Variables
+app.use((req, res, next) => {
+  res.locals.success_msg = req.flash('success_msg');
+  res.locals.error_msg = req.flash('error_msg');
+  res.locals.error = req.flash('error');
+  next();
+});
 
 // CORS
 app.use(function(req, res, next) {
@@ -65,6 +90,17 @@ app.get('/ideas/add', (req, res) => {
   res.render('ideas/add');
 });
 
+// Edit Idea Form
+app.get('/ideas/edit/:id', (req, res) => {
+  Idea.findOne({
+    _id: req.params.id
+  }).then(idea => {
+    res.render('ideas/edit', {
+      idea
+    });
+  });
+});
+
 // Idea index page
 app.get('/ideas', (req, res) => {
   Idea.find({})
@@ -102,7 +138,31 @@ app.post('/ideas', (req, res) => {
   }
 });
 
+// Edit form process -- refactor to ajax request later
+app.put('/ideas/:id', (req, res) => {
+  Idea.findOne({
+    _id: req.params.id
+  }).then(idea => {
+    // new values
+    idea.title = req.body.title;
+    idea.idea = req.body.idea;
+
+    idea.save().then(idea => {
+      res.redirect('/ideas');
+    });
+  });
+});
+
+// Delete Idea
+app.delete('/ideas/:id', (req, res) => {
+  Idea.deleteOne({ _id: req.params.id }).then(() => {
+    res.redirect('/ideas');
+  });
+});
+
 const port = process.env.port || 5000;
 app.listen(port, () => {
   console.log(`Sparks are flying on port ${port}`);
 });
+
+module.exports = { app };

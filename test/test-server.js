@@ -14,7 +14,7 @@ describe('index page', function() {
       .request(app)
       .get('/')
       .then(function(res) {
-        expect(res).to.have.status(200);
+        expect(res).to.have.status(304);
       });
   });
 });
