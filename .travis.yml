@@ -1,2 +1,9 @@
 language: node_js
 node_js: node
+deploy:
+  provider: heroku
+  api_key:
+    secure: TFlISOfILxKZkucq7SaXMyfytBfej0is0UdB5flEYeb4lTi8p5ISu86bNGUeq/BX6NAd/ugW6pvWJ3nfNt5wuC2+m6RFHBvn82i8Px78hd6TMkfUTFJ7UW7x+S89hA8/HhJ3fogZSVHCyNxmKRamMgonL4mOisBwbSSpuOKckbAb57/qDw3nVfRGdP7VeLO1A9VMWchfY1XbBkjh/vq6SSYVhsG/0mJTsk1D4VGcDpKsydeR7b53Yu2QO/h7rbOAfW+b+gtd7H6f2H/4E1VY7o9+RA5jJX1VnoC3T3bnFEWCfOehF145c+1MwhHZRmBL+m3FfJf7XjWFphGA0/oIbW5LzMyBOJFckApKQFmx/bdSCFkh3k6Mgh26U+SFVw3t/ZWUMNiNRXPFSgjZ8sm8ypkOzwRFwuH27R91g34O8iZR0Zj+CG9YCAvrIQoEzCOPqhwvxEW9Hwx7oSJ0N+hpwg2JzAgAUidiS9Grp24o0RjflvgG58OsvC0rUxgvLpkwQBYIbo+GsdTM5k6aRt/7tN2/HVTod1xoauvfzfqROhuC1mijlbPmG9ha9Y3+0tY++Q1vgKfy5if74kg8a3VPhh738wl82ygJWoJ1ELlYiSGodyDpfdm1s6h2FzT/qDW+xeV/u02Iz/iqgFzi2tJOXjpmDoLJ6Km5Da+64IXZDI0=
+  app: polar-inlet-60727
+  on:
+    repo: sanvean74/storycrumb
