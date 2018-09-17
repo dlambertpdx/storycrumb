@@ -21,9 +21,6 @@ const users = require('./routes/users');
 // Passport Config
 require('./config/passport')(passport);
 
-// DB Config
-// const db = require('./config/db');
-
 // Logging
 app.use(morgan('common'));
 
