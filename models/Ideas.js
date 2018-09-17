@@ -5,6 +5,7 @@ const Schema = mongoose.Schema;
 const IdeaSchema = new Schema({
   title: { type: String, required: true },
   idea: { type: String, required: true },
+  user: { type: String, require: true },
   date: { type: Date, default: Date.now }
 });
 

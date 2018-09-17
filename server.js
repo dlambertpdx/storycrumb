@@ -5,6 +5,7 @@ const exphbs = require('express-handlebars');
 const mongoose = require('mongoose');
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
+const passport = require('passport');
 const methodOverride = require('method-override');
 const flash = require('connect-flash');
 const session = require('express-session');
@@ -15,11 +16,19 @@ const app = express();
 const ideas = require('./routes/ideas');
 const users = require('./routes/users');
 
+// Passport Config
+require('./config/passport')(passport);
+
+// DB Config
+const db = require('./config/db');
+
 // Logging
 app.use(morgan('common'));
 
 // Set public folder
 app.use(express.static('public'));
+
+app.use(flash());
 
 // Handlebars Middleware
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
@@ -41,6 +50,10 @@ const sess = {
 
 app.use(session(sess));
 
+// Passport Middleware
+app.use(passport.initialize());
+app.use(passport.session());
+
 // Connect Flash Middleware
 app.use(flash());
 
@@ -49,6 +62,7 @@ app.use((req, res, next) => {
   res.locals.success_msg = req.flash('success_msg');
   res.locals.error_msg = req.flash('error_msg');
   res.locals.error = req.flash('error');
+  res.locals.user = req.user || null;
   next();
 });
 
@@ -65,13 +79,10 @@ app.use(function(req, res, next) {
 
 mongoose.Promise = global.Promise;
 
-// DB Config
-const db = require('./config/keys').mongoURI;
-
 // Connect to mongoose
 mongoose
   .connect(
-    db,
+    db.mongoURI,
     { useNewUrlParser: true }
   )
   .then(() => console.log('DB Connected'))
@@ -94,7 +105,7 @@ app.get('/about', (req, res) => {
 app.use('/ideas', ideas);
 app.use('/users', users);
 
-const port = process.env.port || 5000;
+const port = process.env.PORT || 5000;
 app.listen(port, () => {
   console.log(`Sparks are flying on port ${port}`);
 });
