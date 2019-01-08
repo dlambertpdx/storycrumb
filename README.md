@@ -4,6 +4,6 @@
 
 ## Getting Started
 
-```npm install
-
+```
+npm install
 ```
