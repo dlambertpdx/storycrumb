@@ -5,7 +5,21 @@
 ## Technology Used
 
 - JavaScript
+- Bootstrap
 - Node JS
+- Passport
+- JWT Webtoken
+
+## API
+
+| Endpoint  | Method |       Description |
+| --------- | :----: | ----------------: |
+| /register |  GET   | User Registration |
+| /login    |  POST  |        User Login |
+| /login    |  POST  |        User Login |
+| /login    |  POST  |        User Login |
+| /login    |  POST  |        User Login |
+| /login    |  POST  |        User Login |
 
 ## Getting Started
 
