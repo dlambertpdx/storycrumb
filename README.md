@@ -12,14 +12,19 @@
 
 ## API
 
-| Endpoint  | Method | Description       |
-| --------- | :----: | ----------------- |
-| /register |  GET   | User Registration |
-| /login    |  POST  | User Login        |
-| /login    |  POST  | User Login        |
-| /login    |  POST  | User Login        |
-| /login    |  POST  | User Login        |
-| /login    |  POST  | User Login        |
+| Endpoint       | Method | Description                                |
+| -------------- | :----: | ------------------------------------------ |
+| users/register |  GET   | User Registration                          |
+| users/register |  POST  | Submit Registration Form                   |
+| users/login    |  GET   | User Login                                 |
+| users/login    |  POST  | Submit Login Credentials                   |
+| users/logout   |  GET   | User Logout                                |
+| ideas/         |  GET   | Get ideas from logged in user              |
+| ideas/add      |  GET   | Get Idea from for logged in user           |
+| ideas/add      |  POST  | Submit Idea for logged in user             |
+| ideas/edit/:id |  GET   | Edit Idea form for logged in user          |
+| ideas/:id      |  PUT   | Edit single Idea form for logged in user   |
+| ideas/:id      | DELETE | Delete single Idea form for logged in user |
 
 ## Getting Started
 
