@@ -9,7 +9,7 @@
 To use the demo, [log in](https://polar-inlet-60727.herokuapp.com/users/login) with the following credentials:
 
 username: `demo@demo.com`
-password: `demo`
+password: `demo1234`
 
 ![alt text](img/story-crumb-login.PNG 'log in screen')
 
