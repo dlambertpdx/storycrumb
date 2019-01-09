@@ -19,8 +19,8 @@
 | users/login    |  GET   | User Login                                 |
 | users/login    |  POST  | Submit Login Credentials                   |
 | users/logout   |  GET   | User Logout                                |
-| ideas/         |  GET   | Get ideas from logged in user              |
-| ideas/add      |  GET   | Get Idea from for logged in user           |
+| ideas/         |  GET   | Get all Ideas from logged in user          |
+| ideas/add      |  GET   | New Idea form for logged in user           |
 | ideas/add      |  POST  | Submit Idea for logged in user             |
 | ideas/edit/:id |  GET   | Edit Idea form for logged in user          |
 | ideas/:id      |  PUT   | Update single Idea form for logged in user |
