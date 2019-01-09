@@ -2,6 +2,19 @@
 
 [StoryCrumb](https://polar-inlet-60727.herokuapp.com/) is a responsive full stack journal app for jotting down story ideas for your book or screenplay.
 
+![alt text](img/story-crumb-main.PNG 'main screen')
+
+![alt text](img/story-crumb-stories.PNG 'main screen')
+
+## Live Demo
+
+To use the demo, [log in](https://polar-inlet-60727.herokuapp.com/users/login) with the following credentials:
+
+username: `demo@demo.com`
+password: `demo`
+
+![alt text](img/story-crumb-login.PNG 'log in screen')
+
 ## Technology Used
 
 - JavaScript
@@ -25,12 +38,3 @@
 | ideas/edit/:id |  GET   | Edit Idea form for logged in user          |
 | ideas/:id      |  PUT   | Update single Idea form for logged in user |
 | ideas/:id      | DELETE | Delete single Idea form for logged in user |
-
-## Getting Started
-
-To use the demo, [log in](https://polar-inlet-60727.herokuapp.com/users/login) with the following credentials:
-
-username: `demo@demo.com`
-password: `demo`
-
-![alt text](img/story-crumb-login.PNG 'log in screen')
