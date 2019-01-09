@@ -20,6 +20,8 @@ password: `demo`
 - Node JS
 - Passport
 - JWT Webtoken
+- Mongoose
+- Heroku
 
 ## API
 
