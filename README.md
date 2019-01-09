@@ -23,7 +23,7 @@
 | ideas/add      |  GET   | Get Idea from for logged in user           |
 | ideas/add      |  POST  | Submit Idea for logged in user             |
 | ideas/edit/:id |  GET   | Edit Idea form for logged in user          |
-| ideas/:id      |  PUT   | Edit single Idea form for logged in user   |
+| ideas/:id      |  PUT   | Update single Idea form for logged in user |
 | ideas/:id      | DELETE | Delete single Idea form for logged in user |
 
 ## Getting Started
