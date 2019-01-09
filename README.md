@@ -12,14 +12,14 @@
 
 ## API
 
-| Endpoint  | Method |       Description |
-| --------- | :----: | ----------------: |
+| Endpoint  | Method | Description       |
+| --------- | :----: | ----------------- |
 | /register |  GET   | User Registration |
-| /login    |  POST  |        User Login |
-| /login    |  POST  |        User Login |
-| /login    |  POST  |        User Login |
-| /login    |  POST  |        User Login |
-| /login    |  POST  |        User Login |
+| /login    |  POST  | User Login        |
+| /login    |  POST  | User Login        |
+| /login    |  POST  | User Login        |
+| /login    |  POST  | User Login        |
+| /login    |  POST  | User Login        |
 
 ## Getting Started
 
