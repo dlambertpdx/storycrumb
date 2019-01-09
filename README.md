@@ -1,10 +1,8 @@
 # StoryCrumb
 
-[StoryCrumb](https://polar-inlet-60727.herokuapp.com/) is a responsive full stack journal app for jotting down story ideas for your book or screenplay.
+[StoryCrumb](https://polar-inlet-60727.herokuapp.com/) is a responsive, full stack, and secure journal app for jotting down story ideas for your book or screenplay.
 
-![alt text](img/story-crumb-main.PNG 'main screen')
-
-![alt text](img/story-crumb-stories.PNG 'main screen')
+![alt text](img/story-crumb-main.PNG 'main screen') ![alt text](img/story-crumb-stories.PNG 'main screen')
 
 ## Live Demo
 
