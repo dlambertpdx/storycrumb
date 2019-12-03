@@ -70,7 +70,7 @@ app.use(function(req, res, next) {
   res.header('Access-Control-Allow-Origin', '*');
   res.header('Access-Control-Allow-Headers', 'Content-Type,Authorization');
   res.header('Access-Control-Allow-Methods', 'GET,POST,PUT,PATCH,DELETE');
-  if (req.method === 'OPTIONS') {
+  if(req.method === 'OPTIONS') {
     return res.send(204);
   }
   next();
@@ -104,7 +104,7 @@ function runServer(dbUrl = DATABASE_URL) {
       dbUrl,
       { useNewUrlParser: true },
       err => {
-        if (err) {
+        if(err) {
           return reject(err);
         }
         server = app
@@ -127,7 +127,7 @@ function closeServer() {
       new Promise((resolve, reject) => {
         console.log('Closing server');
         server.close(err => {
-          if (err) {
+          if(err) {
             return reject(err);
           }
           resolve();
@@ -136,7 +136,7 @@ function closeServer() {
   );
 }
 
-if (require.main === module) {
+if(require.main === module) {
   runServer().catch(err => console.log(err));
 }
 

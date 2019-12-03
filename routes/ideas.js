@@ -1,5 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
+// eslint-disable-next-line new-cap
 const router = express.Router();
 const { ensureAuthenticated } = require('../helpers/auth');
 
@@ -28,7 +29,7 @@ router.get('/edit/:id', ensureAuthenticated, (req, res) => {
   Idea.findOne({
     _id: req.params.id
   }).then(idea => {
-    if (idea.user != req.user.id) {
+    if(idea.user !== req.user.id) {
       req.flash('error_msg', 'Not Authorized.');
       res.redirect('/ideas');
     } else {
@@ -42,13 +43,13 @@ router.get('/edit/:id', ensureAuthenticated, (req, res) => {
 // Process form
 router.post('/', ensureAuthenticated, (req, res) => {
   let errors = [];
-  if (!req.body.title) {
+  if(!req.body.title) {
     errors.push({ text: 'Please add a title' });
   }
-  if (!req.body.idea) {
+  if(!req.body.idea) {
     errors.push({ text: 'Please enter an idea' });
   }
-  if (errors.length > 0) {
+  if(errors.length > 0) {
     res.render('ideas/add', {
       errors,
       title: req.body.title,
@@ -60,7 +61,7 @@ router.post('/', ensureAuthenticated, (req, res) => {
       idea: req.body.idea,
       user: req.user.id
     };
-    new Idea(newUser).save().then(idea => {
+    new Idea(newUser).save().then(() => {
       res.redirect('/ideas');
     });
   }
@@ -75,7 +76,7 @@ router.put('/:id', ensureAuthenticated, (req, res) => {
     idea.title = req.body.title;
     idea.idea = req.body.idea;
 
-    idea.save().then(idea => {
+    idea.save().then(() => {
       res.redirect('/ideas');
     });
   });
